@@ -5,16 +5,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="vertical-center">
     <div class="container border">
         <br>
-        <?php
-            if($this->session->flashdata('message'))
-            {
-                echo '
-                <div class="alert alert-success">
-                    '.$this->session->flashdata("message").'
-                </div>
-                ';
-            }
-        ?>
         <div class="row justify-content-end">
             <div class="col-4">
                 <h3 class="text-center">LOGIN</h3>
@@ -25,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
         </div>
-        <form method="post" action="<?php echo base_url(); ?>login/validation">
+        <form method="post" autocomplete="off" action="<?php echo base_url(); ?>login/validation">
             <div class="form-group">
                 <label>Enter Email Address</label>
                 <input type="text" name="user_email" placeholder="Enter Email Address" class="form-control" value="<?php echo set_value('user_email'); ?>" />

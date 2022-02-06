@@ -6,13 +6,16 @@ class Login extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
-        if($this->session->userdata('id'))
-        {
-            redirect('home');
-        }
+
+        // if($this->session->has_userdata('id')){
+        //     redirect('home');
+        // }
+        // else {
+        //     redirect('login');
+        // }
+
+        $this->load->model('login_model');
         $this->load->library('form_validation');
-        // $this->load->library('encrypt');
-        // $this->load->model('login_model');
     }
 
 	public function index()
@@ -28,15 +31,20 @@ class Login extends CI_Controller {
 
         if($this->form_validation->run())
         {
-            $result = $this->login_model->can_login($this->input->post('user_email'), $this->input->post('user_password'));
-            if($result == '')
+            $result = $this->login_model->login($this->input->post('user_email'), $this->input->post('user_password'));
+            if($result)
             {
+                $session_data = array(
+                    'id' => $result->id,
+                    'user_data' => $result
+                );
+                $this->session->set_userdata($session_data);
                 redirect('home');
             }
             else
             {
-                $this->session->set_flashdata('message',$result);
-                redirect('login');
+                // $this->session->set_flashdata('message',"Wrong Email or Password");
+                $this->index();
             }
         }
         else
