@@ -41,6 +41,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <input type="password" name="user_password" placeholder="Enter Password" class="form-control" value="<?php echo set_value('user_password'); ?>" />
                 <span class="text-danger"><?php echo form_error('user_password'); ?></span>
             </div>
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" name="user_confirm_password" placeholder="Confirm Password" class="form-control" value="<?php echo set_value('user_confirm_password'); ?>" />
+                <span class="text-danger"><?php echo form_error('user_confirm_password'); ?></span>
+            </div>
             <div class="form-group text-right">
                 <input type="submit" name="register" value="Register" class="btn btn-primary" />
             </div>
