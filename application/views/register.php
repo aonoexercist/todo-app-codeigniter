@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
         </div>
-        <form method="post" action="<?php echo base_url(); ?>register/validation">
+        <form method="post" autocomplete="off" action="<?php echo base_url(); ?>register/validation">
             <div class="form-group">
                 <label>First Name</label>
                 <input type="text" name="user_first_name" placeholder="First Name" class="form-control" value="<?php echo set_value('user_first_name'); ?>" />
