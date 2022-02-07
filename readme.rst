@@ -13,6 +13,6 @@ Setup
 =====
 
 1. Download and install XAMMP <https://www.apachefriends.org/download.html>`_
-2. Import database file in the ```./database``` folder.
+2. Create database and name it ``my_todo`` and then import database file in the ``./database`` folder.
 3. Download/Copy/Clone the repository into the XAMMP htdocs forlder.
-4. Run the web app. ```http://localhost/todo-app/```.
+4. Run the web app. ``http://localhost/todo-app/``.
