@@ -32,3 +32,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </form>
     </div>
 </div>
+
+
+<?php
+    if($this->session->flashdata('login_message'))
+    {
+        echo '<script>
+            setTimeout(() => {
+                alert("'. $this->session->flashdata("login_message") .'");
+            }, 200);
+        </script>';
+
+        unset($_SESSION['login_message']);
+    }
+?>
