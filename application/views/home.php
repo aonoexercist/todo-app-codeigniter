@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
 
             <div class="card-body">
-                <form>
+                <form method="post">
                     <div class="form-row">
                         <div class="col">
                             <input type="text" name="todo" id="todo" placeholder="Enter Todo" class="form-control" />
@@ -54,10 +54,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                     <?php endif; ?>
                                 </div>
 
-                                <div class="col-9">
+                                <div class="col-8">
                                     <span class="<?php echo 'todo-item-'.strval($value['id']); ?>"><?= $value['title']; ?></span>
                                 </div>
-                                <div class="col-2">
+                                <div class="col-3">
                                     <button class="btn btn-outline-info update" data-id="<?= $value['id']; ?>">update</button>
                                     <button class="btn btn-outline-danger delete" data-id="<?= $value['id']; ?>">delete</button>
                                 </div>
